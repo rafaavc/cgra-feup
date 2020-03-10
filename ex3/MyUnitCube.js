@@ -10,7 +10,23 @@ class MyUnitCube extends CGFobject {
 	}
 	initBuffers() {
 		this.vertices = [
-            0.5, 0.5, 0.5,
+            0.5, 0.5, 0.5, // first vertices
+            0.5, 0.5, -0.5,
+            0.5, -0.5, 0.5,
+            0.5, -0.5, -0.5,
+            -0.5, 0.5, 0.5,
+            -0.5, 0.5, -0.5,
+            -0.5, -0.5, 0.5,
+            -0.5, -0.5, -0.5,
+            0.5, 0.5, 0.5, // second vertices
+            0.5, 0.5, -0.5,
+            0.5, -0.5, 0.5,
+            0.5, -0.5, -0.5,
+            -0.5, 0.5, 0.5,
+            -0.5, 0.5, -0.5,
+            -0.5, -0.5, 0.5,
+            -0.5, -0.5, -0.5,
+            0.5, 0.5, 0.5, // third vertices
             0.5, 0.5, -0.5,
             0.5, -0.5, 0.5,
             0.5, -0.5, -0.5,
@@ -18,7 +34,31 @@ class MyUnitCube extends CGFobject {
             -0.5, 0.5, -0.5,
             -0.5, -0.5, 0.5,
             -0.5, -0.5, -0.5
-		];
+        ]; 
+        
+        this.normals = [];
+
+        for (let i = 0; i < this.vertices.length; i+= 3) {
+            let normal = [];
+            switch (Math.floor(i/21)) {
+                case 0:
+                    normal = [1, 0, 0];
+                    if (this.vertices[i] < 0) normal = normal.map((a) => -1*a);
+                    break;
+                case 1:
+                    normal = [0, 1, 0];
+                    if (this.vertices[i+1] < 0) normal = normal.map((a) => -1*a);
+                    break;
+                case 2:
+                    normal = [0, 0, 1];
+                    if (this.vertices[i+2] < 0) normal = normal.map((a) => -1*a);
+                    break;
+                default: 
+                    break;
+            }
+            for (let a of normal) this.normals.push(a);
+        }
+
 
 		//Counter-clockwise reference of vertices
 		this.indices = [
