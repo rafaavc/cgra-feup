@@ -38,9 +38,9 @@ class MyUnitCube extends CGFobject {
         
         this.normals = [];
 
-        for (let i = 0; i < this.vertices.length; i+= 3) {
+        for (let i = 0; i < this.vertices.length-2; i+= 3) {
             let normal = [];
-            switch (Math.floor(i/21)) {
+            switch (Math.floor(i/24)) {
                 case 0:
                     normal = [1, 0, 0];
                     if (this.vertices[i] < 0) normal = normal.map((a) => -1*a);
