@@ -13,6 +13,11 @@ class MyParallelogram extends CGFobject {
             0, 0, 0,    //0
             1, 1, 0,    //1
             2, 0, 0,    //2
+            3, 1, 0,    //3
+            // second vertices
+            0, 0, 0,    //0
+            1, 1, 0,    //1
+            2, 0, 0,    //2
             3, 1, 0     //3
 		];
 
@@ -23,7 +28,18 @@ class MyParallelogram extends CGFobject {
  			 // Adding double-sidedness
             1, 3, 0,
 			3, 2, 0
-		];
+        ];
+        
+        this.normals = [
+            0, 0, 1,
+            0, 0, 1,
+            0, 0, 1,
+            0, 0, 1,
+            0, 0, -1,
+            0, 0, -1,
+            0, 0, -1,
+            0, 0, -1
+        ]
 
 		//The defined indices (and corresponding vertices)
 		//will be read in groups of three to draw triangles

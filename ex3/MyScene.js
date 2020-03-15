@@ -137,10 +137,16 @@ class MyScene extends CGFscene {
 
         this.updateCustomMaterial();
 
-        this.materials = [this.material1, this.material2, this.material3, this.customMaterial];
+        this.woodMaterial = new CGFappearance(this);
+        this.woodMaterial.setAmbient(0.2, 0.2, 0.2, 1.0);
+        this.woodMaterial.setDiffuse(133/255, 94/255, 66/255, 1.0);
+        this.woodMaterial.setSpecular(0.2, 0.2, 0.2, 1.0);
+        this.woodMaterial.setShininess(20.0);
+
+        this.materials = [this.material1, this.material2, this.material3, this.customMaterial, this.woodMaterial];
 
         // Labels and ID's for object selection on MyInterface
-        this.materialIDs = {'Red Ambient': 0, 'Red Diffuse': 1, 'Red Specular': 2, 'Custom': 3 };
+        this.materialIDs = {'Red Ambient': 0, 'Red Diffuse': 1, 'Red Specular': 2, 'Custom': 3, 'Wood': 4};
     }
     display() { 
         // ---- BEGIN Background, camera and axis setup
