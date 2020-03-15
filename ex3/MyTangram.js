@@ -12,7 +12,6 @@ class MyTangram extends CGFobject {
         this.parallelogram = new MyParallelogram(scene);
         this.triangleSmall = new MyTriangleSmall(scene);
         this.triangleBig = new MyTriangleBig(scene);
-        this.initMaterials.bind(this);
         this.initMaterials();
     }
     
