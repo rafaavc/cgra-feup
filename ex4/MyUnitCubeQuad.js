@@ -32,13 +32,14 @@ class MyUnitCubeQuad extends CGFobject {
         this.sideMaterial.setTextureWrap('REPEAT', 'REPEAT');
     }
 
-	display() {
+	display() {        
         this.scene.pushMatrix();
 
         // transformations need to be in reverse order
         this.scene.translate(0, -0.5, 0);
         this.scene.rotate(Math.PI/2, 1, 0, 0);
         this.bottomMaterial.apply();
+        this.scene.gl.texParameteri(this.scene.gl.TEXTURE_2D, this.scene.gl.TEXTURE_MAG_FILTER, this.scene.gl.NEAREST);
         this.plane.display();
 
         this.scene.popMatrix();
@@ -46,7 +47,8 @@ class MyUnitCubeQuad extends CGFobject {
 
         this.scene.translate(0, 0.5, 0);
         this.scene.rotate(-Math.PI/2, 1, 0, 0); 
-        this.topMaterial.apply();   
+        this.topMaterial.apply();  
+        this.scene.gl.texParameteri(this.scene.gl.TEXTURE_2D, this.scene.gl.TEXTURE_MAG_FILTER, this.scene.gl.NEAREST); 
         this.plane.display();
 
         this.scene.popMatrix();
@@ -54,7 +56,8 @@ class MyUnitCubeQuad extends CGFobject {
 
         this.scene.translate(0.5, 0, 0);
         this.scene.rotate(Math.PI/2, 0, 1, 0);
-        this.sideMaterial.apply();   
+        this.sideMaterial.apply(); 
+        this.scene.gl.texParameteri(this.scene.gl.TEXTURE_2D, this.scene.gl.TEXTURE_MAG_FILTER, this.scene.gl.NEAREST);  
         this.plane.display();
 
         this.scene.popMatrix();
@@ -79,62 +82,5 @@ class MyUnitCubeQuad extends CGFobject {
 
         this.scene.popMatrix();
         this.scene.pushMatrix();
-        /*this.scene.popMatrix();
-        this.scene.pushMatrix();
-        this.scene.translate(2*Math.sqrt(2), 2*Math.sqrt(2)-1, 0);
-        this.scene.rotate(Math.PI/2, 0, 0, 1);
-        this.triangleSmall.texCoords = [
-            0, 0,
-            0, 0.5,
-            0.25, 0.25
-        ]
-        this.triangleSmall.initBuffers();
-        this.triangleSmall.display();
-
-        this.scene.popMatrix();
-        this.scene.pushMatrix();
-        this.scene.translate(Math.sqrt(2)/2, -Math.sqrt(2)/2, 0);
-        this.scene.rotate(Math.PI/4, 0, 0, 1);
-        this.triangleSmall.texCoords = [
-            0.25, 0.75,
-            0.75, 0.75,
-            0.5, 0.5
-        ]
-        this.triangleSmall.initBuffers();
-        this.triangleSmall.display();
-
-        this.scene.popMatrix();
-        this.scene.pushMatrix();
-        this.scene.translate(-Math.sqrt(2), Math.sqrt(2), 0);
-        this.scene.rotate(3*Math.PI/4, 0, 0, 1);
-        this.triangleBig.texCoords = [
-            1, 0,
-            0, 0,
-            0.5, 0.5
-        ]
-        this.triangleBig.initBuffers();
-        this.triangleBig.display();
-
-        this.scene.popMatrix();
-        this.scene.pushMatrix();
-        this.scene.translate(-2, 0, 0);
-        this.scene.rotate(Math.PI, 0, 0, 1);
-        this.triangleBig.texCoords = [
-            1, 0,
-            1, 1,
-            0.5, 0.5
-        ]
-        this.triangleBig.initBuffers();
-        this.triangleBig.display();
-
-        this.scene.popMatrix();
-        this.scene.pushMatrix();
-        
-        this.scene.translate(-1, -1, 0);
-        this.scene.rotate(Math.PI/2, 0, 0, 1);
-        this.triangle.display();
-
-        this.scene.popMatrix();*/
-        // ---- END Primitive drawing section
 	}
 }
