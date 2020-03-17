@@ -19,7 +19,14 @@ class MyParallelogram extends CGFobject {
             1, 1, 0,    //1
             2, 0, 0,    //2
             3, 1, 0     //3
-		];
+        ];
+        
+        this.texCoords = [
+            1, 1,
+            0.75, 0.75,
+            0.5, 1,
+            0.25, 0.75
+        ]
 
 		//Counter-clockwise reference of vertices (when double sided, it has also clockwise vertice ordering)
 		this.indices = [
