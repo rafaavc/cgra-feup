@@ -66,9 +66,9 @@ class MyTangram extends CGFobject {
         this.scene.translate(2*Math.sqrt(2), 2*Math.sqrt(2)-1, 0);
         this.scene.rotate(Math.PI/2, 0, 0, 1);
         this.triangleSmall.texCoords = [
-            0, 0,
-            0, 0.5,
-            0.25, 0.25
+            0.25, 0.75,
+            0.75, 0.75,
+            0.5, 0.5
         ]
         this.triangleSmall.initBuffers();
         this.triangleSmall.display();
@@ -78,9 +78,9 @@ class MyTangram extends CGFobject {
         this.scene.translate(Math.sqrt(2)/2, -Math.sqrt(2)/2, 0);
         this.scene.rotate(Math.PI/4, 0, 0, 1);
         this.triangleSmall.texCoords = [
-            0.25, 0.75,
-            0.75, 0.75,
-            0.5, 0.5
+            0, 0,
+            0, 0.5,
+            0.25, 0.25
         ]
         this.triangleSmall.initBuffers();
         this.triangleSmall.display();
@@ -91,7 +91,7 @@ class MyTangram extends CGFobject {
         this.scene.rotate(3*Math.PI/4, 0, 0, 1);
         this.triangleBig.texCoords = [
             1, 0,
-            0, 0,
+            1, 1,
             0.5, 0.5
         ]
         this.triangleBig.initBuffers();
@@ -100,10 +100,9 @@ class MyTangram extends CGFobject {
         this.scene.popMatrix();
         this.scene.pushMatrix();
         this.scene.translate(-2, 0, 0);
-        this.scene.rotate(Math.PI, 0, 0, 1);
-        this.triangleBig.texCoords = [
+        this.scene.rotate(Math.PI, 0, 0, 1);this.triangleBig.texCoords = [
             1, 0,
-            1, 1,
+            0, 0,
             0.5, 0.5
         ]
         this.triangleBig.initBuffers();
