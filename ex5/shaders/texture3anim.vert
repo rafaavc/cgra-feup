@@ -20,7 +20,9 @@ void main() {
 
 	if (texture2D(uSampler2, vec2(0.0,0.1)+vTextureCoord).b > 0.5)
 		offset=aVertexNormal*normScale*0.1*sin(timeFactor);
+    
+    vec3 offset1=vec3(normScale, 0, 0)*sin(timeFactor)*0.1;
 
-	gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition+offset, 1.0);
+	gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition+offset+offset1, 1.0);
 }
 
