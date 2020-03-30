@@ -32,7 +32,7 @@ class MyUnitCubeQuad extends CGFobject {
         this.sideMaterial.setTextureWrap('REPEAT', 'REPEAT');
     }
 
-	display() {        
+	display() {
         this.scene.pushMatrix();
 
         // transformations need to be in reverse order
