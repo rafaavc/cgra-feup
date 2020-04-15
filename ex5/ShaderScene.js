@@ -83,7 +83,7 @@ class ShaderScene extends CGFscene {
 		this.testShaders[5].setUniformsValues({ uSampler2: 1 });
 		this.testShaders[11].setUniformsValues({ uSampler2: 1, timeFactor: 0 });
 
-
+        
 
 		// Shaders interface variables
 
