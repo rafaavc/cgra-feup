@@ -1,0 +1,3 @@
+[submodule "cgra-project"]
+	path = cgra-project
+	url = git@github.com:rafaavc/cgra-project
